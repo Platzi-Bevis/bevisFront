@@ -1,8 +1,10 @@
 import React from 'react'
 import '../assets/styles/App.scss'
 
+import CodeEditor from './CodeEditor'
+
 const App = () => {
-  return <div>Hello World</div>
+  return <CodeEditor />
 }
 
 export default App
