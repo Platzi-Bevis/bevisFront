@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/Platzi-Bevis/bevisFront/issues"
   },
-  "homepage": "https://github.com/Platzi-Bevis/bevisFront#readme",
+  "homepage": "https://platzi-bevis.github.io/bevisFront/",
   "dependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.15.0",
