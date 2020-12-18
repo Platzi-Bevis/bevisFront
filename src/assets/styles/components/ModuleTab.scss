@@ -1,26 +1,28 @@
 .ModuleTab {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-block-start: var(--space-2);
-  overflow-x: auto;
-
-  .tab-item {
+  .tab-header {
     display: flex;
-    align-items: flex-end;
-    height: inherit;
-    padding: 0 var(--space) calc(var(--space) - 5px) var(--space);
-    text-align: left;
-    font-size: 1.6rem;
-    border-block-end: 3px solid var(--gray);
-
-  }
-  [type="radio"]:checked + .tab-item {
-    font-weight: var(--bold);
-    border-block-end: 3px solid var(--primary-light);
-  }
-
-  [type="radio"] {
-    display: none;
+    justify-content: space-between;
+    width: 100%;
+    margin-block-start: var(--space-2);
+    overflow-x: auto;
+    
+    .tab-item {
+      display: flex;
+      align-items: flex-end;
+      height: inherit;
+      padding: 0 var(--space) calc(var(--space) - 5px) var(--space);
+      text-align: left;
+      font-size: 1.6rem;
+      border-block-end: 3px solid var(--gray);
+      
+    }
+    [type="radio"]:checked + .tab-item {
+      font-weight: var(--bold);
+      border-block-end: 3px solid var(--primary-light);
+    }
+    
+    [type="radio"] {
+      display: none;
+    }
   }
 }

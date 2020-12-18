@@ -1,31 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import '../assets/styles/components/ModuleTab.scss'
 
+const TabButton = ({id, children}) => {
+  return(
+    <>
+    <input type="radio" id={id} name="nav" value={id}/>
+    <label className="tab-item" htmlFor={id}>
+      {children}
+    </label>
+  </>)
+}
+
 const ModuleTab = () => {
+
   return (
-    <div className="ModuleTab">
-      <input type="radio" id="comments" />
-      <label className="tab-item" htmlFor="comments">
-        Aportes
-      </label>
-      <input type="radio" id="questions" />
-      <label className="tab-item" htmlFor="questions">
-        Preguntas
-      </label>
-      <input type="radio" id="practice" />
-      <label className="tab-item" htmlFor="practice">
-        Práctica
-      </label>
-      <input type="radio" id="resources" />
-      <label className="tab-item" htmlFor="resources">
-        Archivos y enlaces
-      </label>
-      <input type="radio" id="bookmarks" />
-      <label className="tab-item" htmlFor="bookmarks">
-        Marcadores
-      </label>
-    </div>
+    <section className="ModuleTab">
+    <form className="tab-header">
+     <TabButton id='comments'>Aportes</TabButton>
+     <TabButton id='questions'>Preguntas</TabButton>
+     <TabButton id='practice'>Práctica</TabButton>
+     <TabButton id='resources'>Archivos y enlaces</TabButton>
+     <TabButton id='bookmarks'>Marcadores</TabButton>
+    </form>
+      <div>
+        Container 
+      </div>
+    </section>
   )
 }
 
