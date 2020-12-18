@@ -1,0 +1,36 @@
+.CodeEditor {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+
+  &-themeBtn {
+    margin: 20px 0;
+  }
+
+  &-sendBtn {
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+
+  &-output {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 32px;
+    padding: 0 20px;
+    margin-inline-end: var(--space-2);
+    border-radius: var(--border-radius);
+    background-color: var(--primary-light);
+    border: 1px solid var(--primary-light);
+    color: var(--white-color);
+    font-weight: 600;
+    align-self: flex-end;
+    outline: none;
+  }
+}
