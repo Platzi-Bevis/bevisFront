@@ -1,0 +1,15 @@
+.Course {
+  display: flex;
+  align-items: center;
+  
+  &__imageContainer {
+    width: 3.2rem;
+    margin-inline-end: var(--space);
+  }
+
+  &__name {
+    font-size: 1.6rem;
+    color: var(--primary-light);
+    font-weight: var(--bold);
+  }
+}
