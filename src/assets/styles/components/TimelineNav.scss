@@ -1,0 +1,36 @@
+.TimelineNav {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 3rem;
+  padding: var(--space-2) 0;
+  background-color: var(--primary-light);
+
+  a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    margin-block-end: var(--space-2);
+    color: var(--primary-light);
+    font-size: 1.2rem;
+    border-radius: 50%;
+    background-color: #056099;
+    text-decoration: none;
+
+    &::after {
+      position: absolute;
+      top: 2.2rem;
+      width: .5rem;
+      height: 2rem;
+      content: '';
+      background-color: #056099;
+    }
+
+    &:last-child::after {
+      width: 0;
+    }
+  }
+}

@@ -1,13 +1,48 @@
+@import './Vars.scss';
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-  background-color: whitesmoke;
+  color: var(--black-color);
+  font-family: var(--font);
+  background-color: #f6f6f6;
 
   div {
-    border: blue solid 2px;
-    color: blue;
     text-align: center;
   }
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 3rem 60% 1fr;
+  height: calc(52px - 100vh);
+}
+
+.class-resources {
+  padding: var(--space-2) var(--space);
+}
+
+::placeholder {
+  font-size: 1.2rem;
+  font-family: var(--font);
+}
+
+.d-flex {
+  display: flex;
 }

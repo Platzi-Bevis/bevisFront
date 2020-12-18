@@ -1,0 +1,16 @@
+.Teacher {
+  display: flex;
+  align-items: center;
+
+  &__avatarContainer {
+    width: 64px;
+    height: 64px;
+    margin-inline-end: var(--space-2);
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__name {
+    font-size: 1.6rem;
+  }
+}

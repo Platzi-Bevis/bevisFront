@@ -1,0 +1,84 @@
+.ClassDetails {
+
+  .tabsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space) 0 0 var(--space-2);
+    text-align: left;
+
+    .tab {
+      display: inline-block;
+      width: 7rem;
+      height: 5rem;
+      line-height: 5rem;
+      font-weight: var(--bold);
+      text-align: center;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+      background-color: var(--white-color);
+      -webkit-box-shadow: 0 -1px 1px rgba(0,0,0,0.2);
+      box-shadow: 0 -1px 1px rgba(0,0,0,0.2);
+    }
+
+    [type="radio"] {
+      display: none;
+    }
+
+    .controls-buttonsContainer {
+      display: flex;
+
+      .report-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4rem;
+        height: 3.2rem;
+        margin-inline-end: var(--space-2);
+        border-radius: var(--border-radius);
+        background-color: var(--white-color);
+        border: 1px solid var(--primary-light);
+      }
+
+      .prev-class {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4rem;
+        height: 3.2rem;
+        border-radius: var(--border-radius) 0 0 var(--border-radius);
+        background-color: var(--white-color);
+      }
+
+      .next-class {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 250px;
+        padding: 0 var(--space-2) 0 var(--space);
+        line-height: 3.2rem;
+        color: var(--white-color);
+        font-weight: var(--bold);
+        text-decoration: none;
+        font-size: 1.6rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        background-color: var(--primary-light);
+      }
+    }
+  }
+
+  &__panel {
+    margin-block-start: -2px;
+    padding: calc(var(--space) + 5px) var(--space-2);
+    border-radius: var(--border-raius);
+    background-color: var(--white-color);
+    
+    h1 {
+      margin-block-end: calc(var(--space) + 5px);
+      padding-block-end: calc(var(--space) + 5px);
+      border-block-end: 1px solid var(--gray);
+      font-size: 2.4rem;
+      font-weight: var(--bold);
+      text-align: left;
+    }
+  }
+}
