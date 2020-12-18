@@ -1,10 +1,14 @@
 import React, { useState, useRef } from 'react'
 import Editor from '@monaco-editor/react'
 
+import '../assets/styles/components/CodeEditor.scss'
+
 const CodeEditor = () => {
   const languaje = 'javascript'
 
   const [theme, setTheme] = useState('dark')
+  const [themeName, setThemeName] = useState(false)
+
   const [isEditorReady, setIsEditorReady] = useState(false)
   const valueGetter = useRef()
 
@@ -12,6 +16,7 @@ const CodeEditor = () => {
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
+    setThemeName(!themeName)
   }
 
   const handleEditorDidMount = (value) => {
@@ -25,24 +30,25 @@ const CodeEditor = () => {
 
   return (
     <div className='CodeEditor'>
-      <button onClick={toggleTheme} type='button'>
-        Toggle Theme
+      <button onClick={toggleTheme} type='button' className='CodeEditor-themeBtn'>
+        {!themeName ? 'Light Mode' : 'Dark Mode'}
       </button>
 
       <Editor
-        height='800px'
-        width='400px'
+        height='500px'
+        width='100%'
+        className='CodeEditor-Editor'
         language={languaje}
         theme={theme}
         value='// Ingresa tu código aquí'
         editorDidMount={handleEditorDidMount}
       />
 
-      <button onClick={handleShowValue} disabled={!isEditorReady} type='button'>
-        Send
+      <button onClick={handleShowValue} disabled={!isEditorReady} type='button' className='CodeEditor-sendBtn'>
+        Enviar
       </button>
 
-      <div>
+      <div className='CodeEditor-output'>
         {codeValue}
       </div>
     </div>
