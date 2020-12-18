@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTestData } from '../utility/hooks/useFetchTest';
 
 import '../assets/styles/components/ModuleTab.scss'
 
@@ -13,7 +14,11 @@ const TabButton = ({id, children}) => {
 }
 
 const ModuleTab = () => {
-
+  const { test, loading } = useTestData(5067, 10)
+  console.group('ModuleTab')
+  console.log(test)
+  console.log(loading)
+  console.groupEnd('ModuleTab')
   return (
     <section className="ModuleTab">
     <form className="tab-header">
