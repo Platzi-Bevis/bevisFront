@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTestData } from '../utility/hooks/useFetchTest';
 import CodeEditor from './CodeEditor'
 
 import '../assets/styles/components/ModuleTab.scss'
@@ -15,6 +16,11 @@ const TabButton = ({ id, children }) => {
 }
 
 const ModuleTab = () => {
+  const { test, loading } = useTestData(5067, 10)
+  console.group('ModuleTab')
+  console.log(test)
+  console.log(loading)
+  console.groupEnd('ModuleTab')
   const [codeEditor, setCodeEditor] = useState(false)
 
   const handleEditor = () => {
