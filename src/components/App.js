@@ -18,7 +18,7 @@ const App = () => {
           <Video />
           <ClassDetails />
         </section>
-        <section className="class-resources">
+        <section className='class-resources'>
           <Course />
           <ModuleTab />
         </section>
