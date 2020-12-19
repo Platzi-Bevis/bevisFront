@@ -31,7 +31,7 @@ img {
 main {
   display: grid;
   grid-template-columns: 3rem 60% 1fr;
-  height: calc(52px - 100vh);
+  height: calc(100vh - 52px);
 }
 
 button {
