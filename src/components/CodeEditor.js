@@ -4,7 +4,7 @@ import Editor from '@monaco-editor/react'
 import '../assets/styles/components/CodeEditor.scss'
 
 const CodeEditor = () => {
-  const languaje = 'javascript'
+  const languaje = 'python'
 
   const [theme, setTheme] = useState('dark')
   const [themeName, setThemeName] = useState(false)
@@ -40,7 +40,7 @@ const CodeEditor = () => {
         className='CodeEditor-Editor'
         language={languaje}
         theme={theme}
-        value='// Ingresa tu código aquí'
+        // value='// Ingresa tu código aquí'
         editorDidMount={handleEditorDidMount}
       />
 
