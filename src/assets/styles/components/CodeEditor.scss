@@ -1,7 +1,17 @@
 .CodeEditor {
-  text-align: start;
   display: flex;
   flex-direction: column;
+  padding: var(--space-2) 0;
+  text-align: start;
+
+  &>div {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__description {
+    font-size: 1.6rem;
+  }
 
   &-themeBtn {
     margin: 20px 0;
@@ -37,5 +47,11 @@
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
       transition: 0.3s;
     }
+  }
+
+  .SuccessMessage {
+    font-size: 1.6rem;
+    font-weight: var(--bold);
+    color: var(--positive);
   }
 }

@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react'
 import Editor from '@monaco-editor/react'
+import ErrorMessage from './ErrorMessage'
 
 import '../assets/styles/components/CodeEditor.scss'
 
-const CodeEditor = () => {
-  const languaje = 'python'
+const CodeEditor = ({ description, boilerplate, language }) => {
 
   const [theme, setTheme] = useState('dark')
   const [themeName, setThemeName] = useState(false)
@@ -30,23 +30,29 @@ const CodeEditor = () => {
 
   return (
     <div className='CodeEditor'>
-      <button onClick={toggleTheme} type='button' className='CodeEditor-themeBtn'>
-        {!themeName ? 'Light Mode' : 'Dark Mode'}
-      </button>
+      <div className="d-flex">
+        <p className="CodeEditor__description">{description}</p>
+        <button onClick={toggleTheme} type='button' className='CodeEditor-themeBtn'>
+          {!themeName ? 'Light Mode' : 'Dark Mode'}
+        </button>
+      </div>
 
       <Editor
         height='500px'
         width='100%'
         className='CodeEditor-Editor'
-        language={languaje}
+        language={language}
         theme={theme}
-        // value='// Ingresa tu código aquí'
+        value={boilerplate}
         editorDidMount={handleEditorDidMount}
       />
 
       <button onClick={handleShowValue} disabled={!isEditorReady} type='button' className='CodeEditor-sendBtn'>
         Enviar
       </button>
+
+      <ErrorMessage message="Error" />
+      <span className="SuccessMessage">Mensaje de éxito</span>
 
       <div className='CodeEditor-output'>
         {codeValue}
