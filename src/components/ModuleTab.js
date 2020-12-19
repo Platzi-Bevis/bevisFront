@@ -16,7 +16,7 @@ const TabButton = ({ id, children }) => {
 }
 
 const ModuleTab = () => {
-  const { test, loading } = useTestData(12, 2)
+  const { data, loading } = useTestData(12, 2)
   const language = 'python'
 
   return (
@@ -32,10 +32,10 @@ const ModuleTab = () => {
       </form>
       {!loading ? (
         <CodeEditor
-          boilerplate={test.boilerplate}
-          description={test.description}
+          boilerplate={data.test.boilerplate}
+          description={data.test.description}
           language={language}
-          caseTest={test.case_test}
+          caseTest={data.test.case_test}
         />
       ) : (
         ''

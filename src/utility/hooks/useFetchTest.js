@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react'
 import { GetTest } from '../api'
 
 export function useTestData(idCourse, idMaterial) {
-  const [test, setTest] = useState({
+  const [data, setTest] = useState({ test: {
     boilerplate: '',
     description: '',
     case_test: ''
-  })
+  } })
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -16,5 +16,5 @@ export function useTestData(idCourse, idMaterial) {
       .then((response) => setTest(response))
       .finally(() => setLoading(false))
   }, [])
-  return { test, loading }
+  return { data, loading }
 }
