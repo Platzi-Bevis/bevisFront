@@ -5,4 +5,15 @@
   color: var(--negative);
   font-weight: var(--bold);
   background-color: #FFEDEC;
+
+  &__title {
+    margin-bottom: 20px;
+    font-weight: var(--bold);
+    font-size: 20px;
+  }
+
+  &__message {
+    font-weight: var(--normal);
+    font-size: 17px;
+  }
 }

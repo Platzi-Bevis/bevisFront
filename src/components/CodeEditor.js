@@ -37,7 +37,7 @@ const CodeEditor = ({title, description, boilerplate, language, onSubmint, submi
       </div>
 
       <Editor
-        height='500px'
+        height='350px'
         width='100%'
         className='CodeEditor-Editor'
         language={language}
