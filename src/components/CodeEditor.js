@@ -50,7 +50,7 @@ const CodeEditor = ({title, description, boilerplate, language, onSubmint, submi
           {!themeName ? 'Light Mode' : 'Dark Mode'}
         </button>
         <div className="d-flex">
-          <button onClick={handleShowValue} type='button' className='CodeEditor__button CodeEditor__button--outline'>
+          <button onClick={handleShowValue} type='button' className='CodeEditor__button CodeEditor__button--outline CodeEditor__button--hidden'>
             Cambiar prueba
           </button>
           <button onClick={handleShowValue} disabled={!isEditorReady} type='button' className='CodeEditor__button'>

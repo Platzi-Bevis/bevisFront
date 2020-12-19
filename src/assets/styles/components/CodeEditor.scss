@@ -52,6 +52,10 @@
       background-color: transparent;
     }
 
+    &--hidden {
+      display: none;
+    }
+
     &:hover {
       -webkit-box-shadow: 1px 2px 4px 0 rgba(21,99,157,.16);
       box-shadow: 1px 2px 4px 0 rgba(21,99,157,.16);
