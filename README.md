@@ -6,3 +6,5 @@ esta relacionado con el [repositorio de backend](https://github.com/Platzi-Bevis
 ```yarn install```
 ```yarn start ```
 
+### Preview
+![preview](https://cdn.discordapp.com/attachments/789228524413780018/789951780309827594/unknown.png)
