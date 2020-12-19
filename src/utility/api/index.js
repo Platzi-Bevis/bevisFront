@@ -6,7 +6,7 @@ const DEFAULT_HEADER = {
   'Content-Type': 'application/json'
 }
 
-const API_URL = 'http://104.236.24.221:8000/api/v1/'
+const API_URL = 'https://api.hardmakers.com/api/v1/'
 
 const API = axios.create({
   baseURL: API_URL,
@@ -15,6 +15,6 @@ const API = axios.create({
   header: DEFAULT_HEADER
 })
 
-export const GetTest = (idCourse, idMaterial) => API.get(`course/${idCourse}/material/${idMaterial}/test`)
-export const PostTest = (idCourse, idMaterial, body) => API.post(`course/${idCourse}/material/${idMaterial}`, body)
+export const GetTest = (idCourse, idMaterial) => API.get(`course/${idCourse}/material/${idMaterial}/tests`)
+export const PostTest = (idCourse, idMaterial, body) => API.post(`course/${idCourse}/material/${idMaterial}/tests`, body)
 

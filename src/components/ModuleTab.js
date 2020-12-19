@@ -16,7 +16,7 @@ const TabButton = ({ id, children }) => {
 }
 
 const ModuleTab = () => {
-  const { test, loading } = useTestData(5067, 10)
+  const { test, loading } = useTestData(12, 2)
   console.group('ModuleTab')
   console.log(test)
   console.log(loading)
