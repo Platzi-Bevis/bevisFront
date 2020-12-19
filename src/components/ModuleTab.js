@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTestData } from '../utility/hooks/useFetchTest'
+import { PostTest } from '../utility/api'
 import CodeEditor from './CodeEditor'
 
 import '../assets/styles/components/ModuleTab.scss'
@@ -17,8 +18,24 @@ const TabButton = ({ id, children }) => {
 
 const ModuleTab = () => {
   const { data, loading } = useTestData(12, 2)
+  const [loadingSumit, setLoading] = useState({ status: 'clean', loading: false })
+
   const language = 'python'
 
+  const clickToSumint = (code) => {
+    setLoading({ status: 'clean', loading: true })
+    // TODO change te language on response as the same of editor,
+    // first change on the back
+    PostTest(12, 2, { language: 'PY', code })
+    /**
+     * the response of post return a object
+     * data: { ... data: {} }
+     */
+      .then((res) => res.data)
+      .then((res) => res.data)
+      .then((sumitStatus) => setLoading({ ...sumitStatus, loading: false }))
+      .catch((err) => { console.error(err) })
+  }
   return (
     <section className='ModuleTab'>
       <form className='tab-header'>
@@ -36,6 +53,8 @@ const ModuleTab = () => {
           description={data.test.description}
           language={language}
           caseTest={data.test.case_test}
+          onSubmint={clickToSumint}
+          submitStatus={loadingSumit}
         />
       ) : (
         ''

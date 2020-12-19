@@ -4,7 +4,7 @@ import ErrorMessage from './ErrorMessage'
 
 import '../assets/styles/components/CodeEditor.scss'
 
-const CodeEditor = ({ description, boilerplate, language }) => {
+const CodeEditor = ({ description, boilerplate, language, onSubmint, submitStatus}) => {
 
   const [theme, setTheme] = useState('dark')
   const [themeName, setThemeName] = useState(false)
@@ -26,12 +26,13 @@ const CodeEditor = ({ description, boilerplate, language }) => {
 
   const handleShowValue = () => {
     setCodeValue(valueGetter.current())
+    onSubmint(valueGetter.current())
   }
 
   return (
     <div className='CodeEditor'>
-      <div className="d-flex">
-        <p className="CodeEditor__description">{description}</p>
+      <div className='d-flex'>
+        <p className='CodeEditor__description'>{description}</p>
         <button onClick={toggleTheme} type='button' className='CodeEditor-themeBtn'>
           {!themeName ? 'Light Mode' : 'Dark Mode'}
         </button>
@@ -50,15 +51,27 @@ const CodeEditor = ({ description, boilerplate, language }) => {
       <button onClick={handleShowValue} disabled={!isEditorReady} type='button' className='CodeEditor-sendBtn'>
         Enviar
       </button>
+      {submitStatus.loading ? (
+        <div> LOADING </div>
+      ) : (
+        <TestStatus testStatus={submitStatus} />
+      )}
 
-      <ErrorMessage message="Error" />
-      <span className="SuccessMessage">Mensaje de éxito</span>
-
-      <div className='CodeEditor-output'>
-        {codeValue}
-      </div>
     </div>
   )
 }
+const TestStatus = ({ testStatus }) => {
+  const { status, output_test } = testStatus
 
+  if (status === 'clean') {
+    return ('')
+  }
+  if (status === false) {
+    return (<ErrorMessage message={output_test} />)
+  }
+
+  if (status === 'Accepted') {
+    return (<span className='SuccessMessage'>{ output_test }</span>)
+  }
+}
 export default CodeEditor
