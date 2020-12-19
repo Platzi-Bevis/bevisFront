@@ -1,10 +1,10 @@
-.ErrorMessage {
+.SuccessMessage {
   padding: var(--space-2);
   margin-block-start: var(--space-2);
   font-size: 1.2rem;
-  color: var(--negative);
+  color: var(--positive);
   font-weight: var(--bold);
-  background-color: #FFEDEC;
+  background-color: #e5ffe2;
   border-radius: var(--border-radius);
 
   &__title {

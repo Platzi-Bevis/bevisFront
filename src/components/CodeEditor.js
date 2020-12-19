@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import Editor from '@monaco-editor/react'
 import ErrorMessage from './ErrorMessage'
+import SuccessMessage from './SuccessMessage'
 
 import '../assets/styles/components/CodeEditor.scss'
 
@@ -37,7 +38,7 @@ const CodeEditor = ({title, description, boilerplate, language, onSubmint, submi
       </div>
 
       <Editor
-        height='500px'
+        height='350px'
         width='100%'
         className='CodeEditor-Editor'
         language={language}
@@ -79,7 +80,8 @@ const TestStatus = ({ testStatus }) => {
   }
 
   if (status === true) {
-    return (<span className='SuccessMessage'>{ output_test }</span>)
+    // return (<span className='SuccessMessage'>{ output_test }</span>)
+    return (<SuccessMessage message={output_test} />)
   }
 }
 export default CodeEditor
