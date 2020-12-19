@@ -33,7 +33,7 @@ const CodeEditor = ({ description, boilerplate, language, onSubmint, submitStatu
     <div className='CodeEditor'>
       <div className='d-flex'>
         <p className='CodeEditor__description'>{description}</p>
-        <button onClick={toggleTheme} type='button' className='CodeEditor-themeBtn'>
+        <button onClick={toggleTheme} type='button' className='CodeEditor-themeBtn CodeEditor__button'>
           {!themeName ? 'Light Mode' : 'Dark Mode'}
         </button>
       </div>
@@ -47,10 +47,15 @@ const CodeEditor = ({ description, boilerplate, language, onSubmint, submitStatu
         value={boilerplate}
         editorDidMount={handleEditorDidMount}
       />
+      <div className="button-container d-flex">
+        <button onClick={handleShowValue} type='button' className='CodeEditor__button CodeEditor__button--outline'>
+          Cambiar prueba
+        </button>
+        <button onClick={handleShowValue} disabled={!isEditorReady} type='button' className='CodeEditor__button'>
+          Enviar
+        </button>
+      </div>
 
-      <button onClick={handleShowValue} disabled={!isEditorReady} type='button' className='CodeEditor-sendBtn'>
-        Enviar
-      </button>
       {submitStatus.loading ? (
         <div> LOADING </div>
       ) : (
