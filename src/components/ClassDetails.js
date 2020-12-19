@@ -23,12 +23,12 @@ const ClassDetails = () => {
           </a>
           <a className="next-class" href="/">
             <MdSkipNext size="30px" color="#ffffff" />
-            Utilizando Vercel
+            Aprendiendo bucles
           </a>
         </div>
       </div>
       <div className="ClassDetails__panel">
-        <h1>Finalizando las páginas</h1>
+        <h1>Operadores lógicos y de comparación</h1>
         <Teacher />
       </div>
     </section>
