@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import Editor from '@monaco-editor/react'
 import ErrorMessage from './ErrorMessage'
+import SuccessMessage from './SuccessMessage'
 
 import '../assets/styles/components/CodeEditor.scss'
 
@@ -79,7 +80,8 @@ const TestStatus = ({ testStatus }) => {
   }
 
   if (status === true) {
-    return (<span className='SuccessMessage'>{ output_test }</span>)
+    // return (<span className='SuccessMessage'>{ output_test }</span>)
+    return (<SuccessMessage message={output_test} />)
   }
 }
 export default CodeEditor
