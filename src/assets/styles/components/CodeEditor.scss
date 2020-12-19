@@ -17,21 +17,20 @@
     margin: 20px 0;
   }
 
-  &-sendBtn {
-    margin-top: 20px;
-    text-transform: uppercase;
-  }
-
   &-output {
     font-size: 20px;
     margin-top: 20px;
   }
 
-  button {
+  .button-container {
+    margin-top: var(--space-2);
+    justify-content: flex-end;
+  }
+
+  &__button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 130px;
     height: 32px;
     padding: 0 20px;
     margin-inline-end: var(--space-2);
@@ -40,8 +39,13 @@
     border: 1px solid var(--primary-light);
     color: var(--white-color);
     font-weight: 600;
-    align-self: flex-end;
+    text-transform: uppercase;
     outline: none;
+
+    &--outline {
+      color: var(--primary-light);
+      background-color: transparent;
+    }
 
     &:hover {
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
