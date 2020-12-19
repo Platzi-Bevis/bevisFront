@@ -4,7 +4,7 @@ import ErrorMessage from './ErrorMessage'
 
 import '../assets/styles/components/CodeEditor.scss'
 
-const CodeEditor = ({ description, boilerplate, language, onSubmint, submitStatus}) => {
+const CodeEditor = ({title, description, boilerplate, language, onSubmint, submitStatus}) => {
 
   const [theme, setTheme] = useState('dark')
   const [themeName, setThemeName] = useState(false)
@@ -31,11 +31,9 @@ const CodeEditor = ({ description, boilerplate, language, onSubmint, submitStatu
 
   return (
     <div className='CodeEditor'>
-      <div className='d-flex'>
+      <div>
+        <h3 className="CodeEditor__title">{title}</h3>
         <p className='CodeEditor__description'>{description}</p>
-        <button onClick={toggleTheme} type='button' className='CodeEditor-themeBtn CodeEditor__button'>
-          {!themeName ? 'Light Mode' : 'Dark Mode'}
-        </button>
       </div>
 
       <Editor
@@ -48,12 +46,17 @@ const CodeEditor = ({ description, boilerplate, language, onSubmint, submitStatu
         editorDidMount={handleEditorDidMount}
       />
       <div className="button-container d-flex">
-        <button onClick={handleShowValue} type='button' className='CodeEditor__button CodeEditor__button--outline'>
-          Cambiar prueba
+        <button onClick={toggleTheme} type='button' className='CodeEditor-themeBtn CodeEditor__button'>
+          {!themeName ? 'Light Mode' : 'Dark Mode'}
         </button>
-        <button onClick={handleShowValue} disabled={!isEditorReady} type='button' className='CodeEditor__button'>
-          Enviar
-        </button>
+        <div className="d-flex">
+          <button onClick={handleShowValue} type='button' className='CodeEditor__button CodeEditor__button--outline'>
+            Cambiar prueba
+          </button>
+          <button onClick={handleShowValue} disabled={!isEditorReady} type='button' className='CodeEditor__button'>
+            Enviar
+          </button>
+        </div>
       </div>
 
       {submitStatus.loading ? (
