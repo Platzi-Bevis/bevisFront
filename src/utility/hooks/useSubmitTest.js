@@ -8,7 +8,7 @@ export function useSubmitTest(idCourse, idMaterial, { language, code }) {
   setLoading(true)
 
   PostTest(idCourse, idMaterial, { language, code })
-    .then((res) => res.json())
+    .then((res) => res.data)
     .then((response) => setSolution(response))
     .finally(() => setLoading(false))
 
