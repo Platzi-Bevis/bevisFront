@@ -28,7 +28,7 @@ const ModuleTab = () => {
     setLoading({ status: 'clean', loading: true })
     // TODO change te language on response as the same of editor,
     // first change on the back
-    PostTest(12, 2, { language: 'PY', code })
+    PostTest(12, 1, { language: 'PY', code })
     /**
      * the response of post return a object
      * data: { ... data: {} }
