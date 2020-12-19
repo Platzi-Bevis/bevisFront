@@ -15,6 +15,6 @@ const API = axios.create({
   header: DEFAULT_HEADER
 })
 
-export const GetTest = (idCourse, idMaterial) => API.get(`course/${idCourse}/material/${idMaterial}`)
+export const GetTest = (idCourse, idMaterial) => API.get(`course/${idCourse}/material/${idMaterial}/test`)
 export const PostTest = (idCourse, idMaterial, body) => API.post(`course/${idCourse}/material/${idMaterial}`, body)
 

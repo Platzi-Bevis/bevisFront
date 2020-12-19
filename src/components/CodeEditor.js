@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import Editor from '@monaco-editor/react'
+import ErrorMessage from './ErrorMessage'
 
 import '../assets/styles/components/CodeEditor.scss'
 
@@ -43,6 +44,8 @@ const CodeEditor = () => {
         value='// Ingresa tu código aquí'
         editorDidMount={handleEditorDidMount}
       />
+
+      <ErrorMessage message="Error" />
 
       <button onClick={handleShowValue} disabled={!isEditorReady} type='button' className='CodeEditor-sendBtn'>
         Enviar
