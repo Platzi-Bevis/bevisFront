@@ -1,11 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import Editor from '@monaco-editor/react'
 import ErrorMessage from './ErrorMessage'
 
 import '../assets/styles/components/CodeEditor.scss'
 
 const CodeEditor = ({ description, boilerplate, language }) => {
-  const language = 'language'
 
   const [theme, setTheme] = useState('dark')
   const [themeName, setThemeName] = useState(false)
@@ -42,18 +41,17 @@ const CodeEditor = ({ description, boilerplate, language }) => {
         height='500px'
         width='100%'
         className='CodeEditor-Editor'
-        language={languaje}
+        language={language}
         theme={theme}
         value={boilerplate}
         editorDidMount={handleEditorDidMount}
       />
 
-      <ErrorMessage message="Error" />
-
       <button onClick={handleShowValue} disabled={!isEditorReady} type='button' className='CodeEditor-sendBtn'>
         Enviar
       </button>
 
+      <ErrorMessage message="Error" />
       <span className="SuccessMessage">Mensaje de éxito</span>
 
       <div className='CodeEditor-output'>
