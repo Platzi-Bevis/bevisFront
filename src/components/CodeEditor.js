@@ -78,7 +78,7 @@ const TestStatus = ({ testStatus }) => {
     return (<ErrorMessage message={output_test} />)
   }
 
-  if (status === 'Accepted') {
+  if (status === true) {
     return (<span className='SuccessMessage'>{ output_test }</span>)
   }
 }
