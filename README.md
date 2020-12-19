@@ -39,7 +39,7 @@ Figma:
 - [Error response](https://www.figma.com/proto/wa37bv6G6fOWuer97ayO5M/platzi-brevi?node-id=3%3A375&viewport=718%2C481%2C0.3093065619468689&scaling=scale-down)
 ### Preview
 ![preview](https://media.discordapp.net/attachments/789228524413780018/789979897027362816/unknown.png?width=942&height=475)
-### Colleages
+### Colleagues
 - Alejandro Medina
 - Felipe Merchan
 - Juan Camilo Rico
