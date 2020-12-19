@@ -5,11 +5,12 @@ import CodeEditor from './CodeEditor'
 
 import '../assets/styles/components/ModuleTab.scss'
 
-const TabButton = ({ id, children }) => {
+const TabButton = ({ id, children, highlight }) => {
+
   return (
     <>
       <input type='radio' id={id} name='nav' value={id} />
-      <label className='tab-item' htmlFor={id}>
+      <label className={`tab-item ${highlight ? 'notificate' : ''}`} htmlFor={id}>
         {children}
       </label>
     </>
@@ -18,6 +19,7 @@ const TabButton = ({ id, children }) => {
 
 const ModuleTab = () => {
   const { data, loading } = useTestData(12, 2)
+  const [tab, setTab] = useState('comments')
   const [loadingSumit, setLoading] = useState({ status: 'clean', loading: false })
 
   const language = 'python'
@@ -38,16 +40,16 @@ const ModuleTab = () => {
   }
   return (
     <section className='ModuleTab'>
-      <form className='tab-header'>
+      <form className='tab-header' onChange={(e) => setTab(e.target.id)}>
         <TabButton id='comments'>Aportes</TabButton>
         <TabButton id='questions'>Preguntas</TabButton>
-        <TabButton id='practice'>
+        <TabButton id='practice' highlight={tab !== 'practice'}>
           Práctica
         </TabButton>
         <TabButton id='resources'>Archivos y enlaces</TabButton>
         <TabButton id='bookmarks'>Marcadores</TabButton>
       </form>
-      {!loading ? (
+      {!loading && tab === 'practice' ? (
         <CodeEditor
           boilerplate={data.test.boilerplate}
           description={data.test.description}

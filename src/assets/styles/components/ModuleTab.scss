@@ -1,3 +1,12 @@
+@keyframes notificate {
+  0% {
+    border-block-end: 3px solid var(--gray);
+  }
+  100%{
+    border-block-end: 3px solid var(--primary-light);
+  }
+}
+
 .ModuleTab {
   .tab-header {
     display: flex;
@@ -5,7 +14,11 @@
     width: 100%;
     margin-block-start: var(--space-2);
     overflow-x: auto;
-    
+    .notificate {
+      animation-name: notificate;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
     .tab-item {
       display: flex;
       align-items: flex-end;
@@ -14,8 +27,8 @@
       text-align: left;
       font-size: 1.6rem;
       border-block-end: 3px solid var(--gray);
-      
     }
+    
     [type="radio"]:checked + .tab-item {
       font-weight: var(--bold);
       border-block-end: 3px solid var(--primary-light);
