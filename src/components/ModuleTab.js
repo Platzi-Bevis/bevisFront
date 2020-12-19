@@ -51,6 +51,7 @@ const ModuleTab = () => {
       </form>
       {!loading && tab === 'practice' ? (
         <CodeEditor
+          title={data.test.title}
           boilerplate={data.test.boilerplate}
           description={data.test.description}
           language={language}
